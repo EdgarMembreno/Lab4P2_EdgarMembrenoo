@@ -7,7 +7,9 @@ package examen1p2_edgarmembren;
 
 import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -1311,7 +1313,11 @@ public class LOGIN extends javax.swing.JFrame {
         try {
             String username = user_login.getText();
             String password = pass_login.getText();
-            if (username.equals("admin") && password.equals("1234")) {
+            if (username.equals("david") && password.equals("1234")) {
+                jd_admin.setModal(true);
+                jd_admin.pack();
+                jd_admin.setLocationRelativeTo(this);
+                jd_admin.setVisible(true);
 
             } else {
                 JOptionPane.showMessageDialog(this, "** USUARIO INCORRECTO **");
@@ -1335,17 +1341,15 @@ public class LOGIN extends javax.swing.JFrame {
         }
         String user = tf_User.getText();
         String pass = tf_Pass.getText();
-        
-        
+
         tf_NumeroUsuario.setText("");
         tf_ApellidoUsuario.setText("");
         tf_CorreoUsuario.setText("");
         tf_nombreUsuario.setText("");
         tf_User.setText("");
         tf_Pass.setText("");
-        
+
         usuario.add(new Usuarios(nombre, apellido, correo, numero, plan, user, pass));
-        
 
 
     }//GEN-LAST:event_boton_CrearUsuarioActionPerformed
@@ -1375,30 +1379,75 @@ public class LOGIN extends javax.swing.JFrame {
     }//GEN-LAST:event_agregar_SeriesActionPerformed
 
     private void agregar_ServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_ServicioActionPerformed
-      String nombre = tf_nombreServicio.getText();
-      int precio = Integer.parseInt(tf_precioServicio.getText());
-      String calificaciones = tf_calificacion.getText();
-      
-      Date fecha = fecha_Creacion.getDate();
-      String empresa = tf_Empresa.getText();
-      
-      servicios.add(new Servicios(nombre, precio, calificaciones, fecha, empresa));
-      
-      
-      
-      
-        
-        
-        
-        
+        String nombre = tf_nombreServicio.getText();
+        int precio = Integer.parseInt(tf_precioServicio.getText());
+        String calificaciones = tf_calificacion.getText();
+
+        Date fecha = fecha_Creacion.getDate();
+        String empresa = tf_Empresa.getText();
+
+        tf_nombreServicio.setText("");
+        tf_precioServicio.setText("");
+        tf_calificacion.setText("");
+        tf_Empresa.setText("");
+        servicios.add(new Servicios(nombre, precio, calificaciones, fecha, empresa));
+        Object[] servicio = {nombre};
+        DefaultTableModel modelo = (DefaultTableModel) tabla_Servicio.getModel();
+        modelo.addRow(servicio);
+        tabla_Servicio.setModel(modelo);
+        /////////
+        Servicios x = new Servicios(nombre, precio, calificaciones, fecha, empresa);
+        DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_servicio.getModel();
+        dc.addElement(x);
+        cb_servicio.setModel(dc);
+
+
     }//GEN-LAST:event_agregar_ServicioActionPerformed
 
     private void eliminar_ServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminar_ServicioActionPerformed
-        // TODO add your handling code here:
+        if (tabla_Servicio.getSelectedRow() >= 0) {
+            int po = tabla_Servicio.getSelectedRow();
+            Servicios x = servicios.get(tabla_Servicio.getSelectedRow());
+            servicios.remove(tabla_Servicio.getSelectedRow());
+            DefaultTableModel modelo = (DefaultTableModel) tabla_Servicio.getModel();
+            modelo.removeRow(tabla_Servicio.getSelectedRow());
+            tabla_Servicio.setModel(modelo);
+            DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_servicio.getModel();
+            dc.removeElementAt(po);
+            cb_servicio.setModel(dc);
+        }
+
+
     }//GEN-LAST:event_eliminar_ServicioActionPerformed
 
     private void modificar_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificar_UsuarioActionPerformed
-        // TODO add your handling code here:
+        String nombre = tf_nombreServicioM.getText();
+        int precio = Integer.parseInt(tf_precioServicioM.getText());
+        String calificaciones = tf_calificacionM.getText();
+
+        Date fecha = fecha_CreacionM.getDate();
+        String empresa = tf_EmpresaM.getText();
+        int po = cb_servicio.getSelectedIndex();
+        servicios.get(po).setNombre(nombre);
+        servicios.get(po).setPrecio(precio);
+        servicios.get(po).setCalificacion(calificaciones);
+        servicios.get(po).setFecha(fecha);
+        servicios.get(po).setEmpresa(empresa);
+
+        Object[] servicio = {nombre};
+        Servicios x = new Servicios(nombre, precio, calificaciones, fecha, empresa);
+        DefaultTableModel modelo = (DefaultTableModel) tabla_Servicio.getModel();
+        modelo.insertRow(cb_servicio.getSelectedIndex(), servicio);
+        modelo.removeRow(cb_servicio.getSelectedIndex() + 1);
+        tabla_Servicio.setModel(modelo);
+
+        DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_servicio.getModel();
+        dc.setSelectedItem(x);
+        dc.insertElementAt(x, po);
+        dc.removeElementAt(po + 1);
+        cb_servicio.setModel(dc);
+
+
     }//GEN-LAST:event_modificar_UsuarioActionPerformed
 
     private void cb_servicioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_servicioItemStateChanged
@@ -1635,6 +1684,6 @@ public class LOGIN extends javax.swing.JFrame {
     private javax.swing.JTextField user_login;
     // End of variables declaration//GEN-END:variables
  ArrayList<Usuarios> usuario = new ArrayList();
- ArrayList<Servicios> servicios = new ArrayList();
+    ArrayList<Servicios> servicios = new ArrayList();
 
 }
