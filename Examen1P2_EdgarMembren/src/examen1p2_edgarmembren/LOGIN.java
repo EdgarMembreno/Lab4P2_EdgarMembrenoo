@@ -186,14 +186,32 @@ public class LOGIN extends javax.swing.JFrame {
         EstrenoCine = new com.toedter.calendar.JDateChooser();
         jLabel67 = new javax.swing.JLabel();
         EstrenoEnStream = new com.toedter.calendar.JDateChooser();
+        jLabel20 = new javax.swing.JLabel();
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
+        jd_OpcionesUsuario = new javax.swing.JDialog();
+        jTabbedPane7 = new javax.swing.JTabbedPane();
+        jPanel5 = new javax.swing.JPanel();
+        jTabbedPane8 = new javax.swing.JTabbedPane();
+        jPanel21 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tabla_serviciosSub = new javax.swing.JTable();
+        subscribir = new javax.swing.JButton();
+        jTabbedPane10 = new javax.swing.JTabbedPane();
+        jPanel23 = new javax.swing.JPanel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        tabla_Opciones = new javax.swing.JTable();
+        jPanel29 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        subscripciones = new javax.swing.JTextArea();
+        jLabel22 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         user_login = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         pass_login = new javax.swing.JTextField();
         login_button = new javax.swing.JButton();
         crear_CuentaBoton = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
 
         jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jLabel3.setText("Crear Usuario");
@@ -1227,21 +1245,168 @@ public class LOGIN extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Pelicula", jTabbedPane1);
 
+        jLabel20.setFont(new java.awt.Font("Malayalam Sangam MN", 1, 24)); // NOI18N
+        jLabel20.setText("Opciones Admin");
+
         javax.swing.GroupLayout jd_adminLayout = new javax.swing.GroupLayout(jd_admin.getContentPane());
         jd_admin.getContentPane().setLayout(jd_adminLayout);
         jd_adminLayout.setHorizontalGroup(
             jd_adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_adminLayout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 853, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addGroup(jd_adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_adminLayout.createSequentialGroup()
+                        .addGap(71, 71, 71)
+                        .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 853, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_adminLayout.createSequentialGroup()
+                        .addGap(412, 412, 412)
+                        .addComponent(jLabel20)))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
         jd_adminLayout.setVerticalGroup(
             jd_adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_adminLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_adminLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
+                .addComponent(jLabel20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 621, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addGap(31, 31, 31))
+        );
+
+        tabla_serviciosSub.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Servicios"
+            }
+        ));
+        jScrollPane4.setViewportView(tabla_serviciosSub);
+
+        subscribir.setText("Subscribir");
+        subscribir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subscribirActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
+        jPanel21.setLayout(jPanel21Layout);
+        jPanel21Layout.setHorizontalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel21Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4)
+                .addContainerGap())
+            .addGroup(jPanel21Layout.createSequentialGroup()
+                .addGap(357, 357, 357)
+                .addComponent(subscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(357, Short.MAX_VALUE))
+        );
+        jPanel21Layout.setVerticalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel21Layout.createSequentialGroup()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(subscribir, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                .addGap(20, 20, 20))
+        );
+
+        jTabbedPane8.addTab("Servicios", jPanel21);
+
+        tabla_Opciones.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombres"
+            }
+        ));
+        jScrollPane8.setViewportView(tabla_Opciones);
+
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 822, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(88, Short.MAX_VALUE))
+        );
+
+        jTabbedPane10.addTab("", jPanel23);
+
+        jTabbedPane8.addTab("Series, Peliculas, Mini Serie", jTabbedPane10);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 838, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(7, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane8))
+        );
+
+        jTabbedPane7.addTab("Servicios", jPanel5);
+
+        subscripciones.setEditable(false);
+        subscripciones.setColumns(20);
+        subscripciones.setRows(5);
+        jScrollPane1.setViewportView(subscripciones);
+
+        javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
+        jPanel29.setLayout(jPanel29Layout);
+        jPanel29Layout.setHorizontalGroup(
+            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 851, Short.MAX_VALUE)
+        );
+        jPanel29Layout.setVerticalGroup(
+            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel29Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        jTabbedPane7.addTab("Subscripciones", jPanel29);
+
+        jLabel22.setFont(new java.awt.Font("Nanum Gothic", 1, 24)); // NOI18N
+        jLabel22.setText("Servicios de Subscripcion");
+
+        javax.swing.GroupLayout jd_OpcionesUsuarioLayout = new javax.swing.GroupLayout(jd_OpcionesUsuario.getContentPane());
+        jd_OpcionesUsuario.getContentPane().setLayout(jd_OpcionesUsuarioLayout);
+        jd_OpcionesUsuarioLayout.setHorizontalGroup(
+            jd_OpcionesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_OpcionesUsuarioLayout.createSequentialGroup()
+                .addContainerGap(93, Short.MAX_VALUE)
+                .addGroup(jd_OpcionesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_OpcionesUsuarioLayout.createSequentialGroup()
+                        .addComponent(jTabbedPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 853, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(63, 63, 63))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_OpcionesUsuarioLayout.createSequentialGroup()
+                        .addComponent(jLabel22)
+                        .addGap(337, 337, 337))))
+        );
+        jd_OpcionesUsuarioLayout.setVerticalGroup(
+            jd_OpcionesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_OpcionesUsuarioLayout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addComponent(jLabel22)
+                .addGap(18, 18, 18)
+                .addComponent(jTabbedPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 621, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1264,34 +1429,43 @@ public class LOGIN extends javax.swing.JFrame {
             }
         });
 
+        jLabel21.setFont(new java.awt.Font("Nanum Myeongjo", 1, 24)); // NOI18N
+        jLabel21.setText("Login");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(343, 343, 343)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(login_button, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                                .addComponent(crear_CuentaBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel2)
+                                    .addGap(55, 55, 55)
+                                    .addComponent(pass_login, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel1)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(user_login, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(343, 343, 343)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(login_button, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
-                            .addComponent(crear_CuentaBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(55, 55, 55)
-                                .addComponent(pass_login, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(user_login, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(290, 290, 290)
+                        .addComponent(jLabel21)))
                 .addContainerGap(113, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(117, 117, 117)
+                .addGap(46, 46, 46)
+                .addComponent(jLabel21)
+                .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(user_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1303,7 +1477,7 @@ public class LOGIN extends javax.swing.JFrame {
                 .addComponent(login_button)
                 .addGap(18, 18, 18)
                 .addComponent(crear_CuentaBoton)
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         pack();
@@ -1318,38 +1492,60 @@ public class LOGIN extends javax.swing.JFrame {
                 jd_admin.pack();
                 jd_admin.setLocationRelativeTo(this);
                 jd_admin.setVisible(true);
+                user_login.setText("");
+                pass_login.setText("");
 
             } else {
-                JOptionPane.showMessageDialog(this, "** USUARIO INCORRECTO **");
+                jd_OpcionesUsuario.setModal(true);
+                jd_OpcionesUsuario.pack();
+                jd_OpcionesUsuario.setLocationRelativeTo(this);
+                jd_OpcionesUsuario.setVisible(true);
+                user_login.setText("");
+                pass_login.setText("");
             }
+
+            for (int i = 0; i < usuario.size(); i++) {
+                if (user_login.equals(usuario.get(i).getUser()) && pass_login.equals(usuario.get(i).getPass())) {
+                    jd_OpcionesUsuario.setModal(true);
+                    jd_OpcionesUsuario.pack();
+                    jd_OpcionesUsuario.setLocationRelativeTo(this);
+                    jd_OpcionesUsuario.setVisible(true);
+                }
+
+            }
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "** OCURRIO UN ERROR **");
         }
     }//GEN-LAST:event_login_buttonActionPerformed
 
     private void boton_CrearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_CrearUsuarioActionPerformed
+        try {
+            String nombre = tf_NumeroUsuario.getText();
+            String apellido = tf_ApellidoUsuario.getText();
+            String correo = tf_CorreoUsuario.getText();
+            String numero = tf_nombreUsuario.getText();
+            String plan = "";
+            if (familiar.isSelected()) {
+                plan.equals("Familiar");
+            } else if (Individual.isSelected()) {
+                plan.equals("Individual");
+            }
+            String user = tf_User.getText();
+            String pass = tf_Pass.getText();
 
-        String nombre = tf_NumeroUsuario.getText();
-        String apellido = tf_ApellidoUsuario.getText();
-        String correo = tf_CorreoUsuario.getText();
-        String numero = tf_nombreUsuario.getText();
-        String plan = "";
-        if (familiar.isSelected()) {
-            plan.equals("Familiar");
-        } else if (Individual.isSelected()) {
-            plan.equals("Individual");
+            tf_NumeroUsuario.setText("");
+            tf_ApellidoUsuario.setText("");
+            tf_CorreoUsuario.setText("");
+            tf_nombreUsuario.setText("");
+            tf_User.setText("");
+            tf_Pass.setText("");
+
+            usuario.add(new Usuarios(nombre, apellido, correo, numero, plan, user, pass));
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "** OCURRIO UN ERROR **");
         }
-        String user = tf_User.getText();
-        String pass = tf_Pass.getText();
-
-        tf_NumeroUsuario.setText("");
-        tf_ApellidoUsuario.setText("");
-        tf_CorreoUsuario.setText("");
-        tf_nombreUsuario.setText("");
-        tf_User.setText("");
-        tf_Pass.setText("");
-
-        usuario.add(new Usuarios(nombre, apellido, correo, numero, plan, user, pass));
 
 
     }//GEN-LAST:event_boton_CrearUsuarioActionPerformed
@@ -1363,47 +1559,59 @@ public class LOGIN extends javax.swing.JFrame {
     }//GEN-LAST:event_crear_CuentaBotonActionPerformed
 
     private void eliminar_SeriesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminar_SeriesActionPerformed
-        if (tabla_eliminarSerie.getSelectedRow() >= 0) {
-            int po = tabla_eliminarSerie.getSelectedRow();
-            Series x = serie.get(tabla_eliminarSerie.getSelectedRow());
-            serie.remove(tabla_eliminarSerie.getSelectedRow());
-            DefaultTableModel modelo = (DefaultTableModel) tabla_eliminarSerie.getModel();
-            modelo.removeRow(tabla_eliminarSerie.getSelectedRow());
-            tabla_eliminarSerie.setModel(modelo);
-            DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_series.getModel();
-            dc.removeElementAt(po);
-            cb_series.setModel(dc);
+
+        try {
+            if (tabla_eliminarSerie.getSelectedRow() >= 0) {
+                int po = tabla_eliminarSerie.getSelectedRow();
+                Series x = serie.get(tabla_eliminarSerie.getSelectedRow());
+                serie.remove(tabla_eliminarSerie.getSelectedRow());
+                DefaultTableModel modelo = (DefaultTableModel) tabla_eliminarSerie.getModel();
+                modelo.removeRow(tabla_eliminarSerie.getSelectedRow());
+                tabla_eliminarSerie.setModel(modelo);
+                DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_series.getModel();
+                dc.removeElementAt(po);
+                cb_series.setModel(dc);
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "** OCURRIO UN ERROR **");
         }
 
 
     }//GEN-LAST:event_eliminar_SeriesActionPerformed
 
     private void modificar_SerieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificar_SerieActionPerformed
-        String nombre = tf_SerieNombreM.getText();
-        int temporada = Integer.parseInt(tf_SeriesTemporadasM.getText());
-        int calificaciones = Integer.parseInt(tf_RatingSeriesM.getText());
-        Date estreno = EstrenoSerieM.getDate();
-        int actores = Integer.parseInt(tf_ActoresM.getText());
-        int po = cb_series.getSelectedIndex();
 
-        serie.get(po).setNombre(nombre);
-        serie.get(po).setTemporadas(temporada);
-        serie.get(po).setCalificacion(calificaciones);
-        serie.get(po).setEstreno(estreno);
-        serie.get(po).setActores(actores);
+        try {
+            String nombre = tf_SerieNombreM.getText();
+            int temporada = Integer.parseInt(tf_SeriesTemporadasM.getText());
+            int calificaciones = Integer.parseInt(tf_RatingSeriesM.getText());
+            Date estreno = EstrenoSerieM.getDate();
+            int actores = Integer.parseInt(tf_ActoresM.getText());
+            int po = cb_series.getSelectedIndex();
 
-        Object[] serie = {nombre};
-        Series x = new Series(nombre, temporada, calificaciones, estreno, actores);
-        DefaultTableModel modelo = (DefaultTableModel) tabla_eliminarSerie.getModel();
-        modelo.insertRow(cb_series.getSelectedIndex(), serie);
-        modelo.removeRow(cb_series.getSelectedIndex() + 1);
-        tabla_eliminarSerie.setModel(modelo);
+            serie.get(po).setNombre(nombre);
+            serie.get(po).setTemporadas(temporada);
+            serie.get(po).setCalificacion(calificaciones);
+            serie.get(po).setEstreno(estreno);
+            serie.get(po).setActores(actores);
 
-        DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_series.getModel();
-        dc.setSelectedItem(x);
-        dc.insertElementAt(x, po);
-        dc.removeElementAt(po + 1);
-        cb_series.setModel(dc);
+            Object[] serie = {nombre};
+            Series x = new Series(nombre, temporada, calificaciones, estreno, actores);
+            DefaultTableModel modelo = (DefaultTableModel) tabla_eliminarSerie.getModel();
+            modelo.insertRow(cb_series.getSelectedIndex(), serie);
+            modelo.removeRow(cb_series.getSelectedIndex() + 1);
+            tabla_eliminarSerie.setModel(modelo);
+
+            DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_series.getModel();
+            dc.setSelectedItem(x);
+            dc.insertElementAt(x, po);
+            dc.removeElementAt(po + 1);
+            cb_series.setModel(dc);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "** OCURRIO UN ERROR **");
+        }
 
 
     }//GEN-LAST:event_modificar_SerieActionPerformed
@@ -1413,99 +1621,132 @@ public class LOGIN extends javax.swing.JFrame {
     }//GEN-LAST:event_cb_seriesItemStateChanged
 
     private void agregar_SeriesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_SeriesActionPerformed
-        String nombre = tf_SerieNombre.getText();
-        int temporada = Integer.parseInt(tf_SeriesTemporadas.getText());
-        int calificaciones = Integer.parseInt(tf_RatingSeries.getText());
-        Date estreno = EstrenoSerie.getDate();
-        int actores = Integer.parseInt(tf_Actores.getText());
 
-        tf_SerieNombre.setText("");
-        tf_SeriesTemporadas.setText("");
-        tf_RatingSeries.setText("");
-        tf_Actores.setText("");
+        try {
+            String nombre = tf_SerieNombre.getText();
+            int temporada = Integer.parseInt(tf_SeriesTemporadas.getText());
+            int calificaciones = Integer.parseInt(tf_RatingSeries.getText());
+            Date estreno = EstrenoSerie.getDate();
+            int actores = Integer.parseInt(tf_Actores.getText());
 
-        serie.add(new Series(nombre, temporada, calificaciones, estreno, actores));
+            tf_SerieNombre.setText("");
+            tf_SeriesTemporadas.setText("");
+            tf_RatingSeries.setText("");
+            tf_Actores.setText("");
 
-        Object[] serie = {nombre};
-        DefaultTableModel modelo = (DefaultTableModel) tabla_eliminarSerie.getModel();
-        modelo.addRow(serie);
-        tabla_eliminarSerie.setModel(modelo);
-        ///////////
-        Series x = new Series(nombre, temporada, calificaciones, estreno, actores);
-        DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_servicio.getModel();
-        dc.addElement(x);
-        cb_series.setModel(dc);
+            serie.add(new Series(nombre, temporada, calificaciones, estreno, actores));
+
+            Object[] serie = {nombre};
+            DefaultTableModel modelo = (DefaultTableModel) tabla_eliminarSerie.getModel();
+            modelo.addRow(serie);
+            tabla_eliminarSerie.setModel(modelo);
+
+            DefaultTableModel mod = (DefaultTableModel) tabla_Opciones.getModel();
+            mod.addRow(serie);
+            tabla_Opciones.setModel(mod);
+            ///////////
+            Series x = new Series(nombre, temporada, calificaciones, estreno, actores);
+            DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_servicio.getModel();
+            dc.addElement(x);
+            cb_series.setModel(dc);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "** OCURRIO UN ERROR **");
+        }
+
 
     }//GEN-LAST:event_agregar_SeriesActionPerformed
 
     private void agregar_ServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_ServicioActionPerformed
-        String nombre = tf_nombreServicio.getText();
-        int precio = Integer.parseInt(tf_precioServicio.getText());
-        String calificaciones = tf_calificacion.getText();
 
-        Date fecha = fecha_Creacion.getDate();
-        String empresa = tf_Empresa.getText();
+        try {
+            String nombre = tf_nombreServicio.getText();
+            int precio = Integer.parseInt(tf_precioServicio.getText());
+            String calificaciones = tf_calificacion.getText();
 
-        tf_nombreServicio.setText("");
-        tf_precioServicio.setText("");
-        tf_calificacion.setText("");
-        tf_Empresa.setText("");
-        servicios.add(new Servicios(nombre, precio, calificaciones, fecha, empresa));
-        Object[] servicio = {nombre};
-        DefaultTableModel modelo = (DefaultTableModel) tabla_Servicio.getModel();
-        modelo.addRow(servicio);
-        tabla_Servicio.setModel(modelo);
-        /////////
-        Servicios x = new Servicios(nombre, precio, calificaciones, fecha, empresa);
-        DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_servicio.getModel();
-        dc.addElement(x);
-        cb_servicio.setModel(dc);
+            Date fecha = fecha_Creacion.getDate();
+            String empresa = tf_Empresa.getText();
+
+            tf_nombreServicio.setText("");
+            tf_precioServicio.setText("");
+            tf_calificacion.setText("");
+            tf_Empresa.setText("");
+            servicios.add(new Servicios(nombre, precio, calificaciones, fecha, empresa));
+            Object[] servicio = {nombre};
+            DefaultTableModel modelo = (DefaultTableModel) tabla_Servicio.getModel();
+            modelo.addRow(servicio);
+            tabla_Servicio.setModel(modelo);
+
+            DefaultTableModel mod = (DefaultTableModel) tabla_serviciosSub.getModel();
+            mod.addRow(servicio);
+            tabla_serviciosSub.setModel(mod);
+            /////////
+            Servicios x = new Servicios(nombre, precio, calificaciones, fecha, empresa);
+            DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_servicio.getModel();
+            dc.addElement(x);
+            cb_servicio.setModel(dc);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "** OCURRIO UN ERROR **");
+        }
 
 
     }//GEN-LAST:event_agregar_ServicioActionPerformed
 
     private void eliminar_ServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminar_ServicioActionPerformed
-        if (tabla_Servicio.getSelectedRow() >= 0) {
-            int po = tabla_Servicio.getSelectedRow();
-            Servicios x = servicios.get(tabla_Servicio.getSelectedRow());
-            servicios.remove(tabla_Servicio.getSelectedRow());
-            DefaultTableModel modelo = (DefaultTableModel) tabla_Servicio.getModel();
-            modelo.removeRow(tabla_Servicio.getSelectedRow());
-            tabla_Servicio.setModel(modelo);
-            DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_servicio.getModel();
-            dc.removeElementAt(po);
-            cb_servicio.setModel(dc);
+
+        try {
+            if (tabla_Servicio.getSelectedRow() >= 0) {
+                int po = tabla_Servicio.getSelectedRow();
+                Servicios x = servicios.get(tabla_Servicio.getSelectedRow());
+                servicios.remove(tabla_Servicio.getSelectedRow());
+                DefaultTableModel modelo = (DefaultTableModel) tabla_Servicio.getModel();
+                modelo.removeRow(tabla_Servicio.getSelectedRow());
+                tabla_Servicio.setModel(modelo);
+                DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_servicio.getModel();
+                dc.removeElementAt(po);
+                cb_servicio.setModel(dc);
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "** OCURRIO UN ERROR **");
         }
 
 
     }//GEN-LAST:event_eliminar_ServicioActionPerformed
 
     private void modificar_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificar_UsuarioActionPerformed
-        String nombre = tf_nombreServicioM.getText();
-        int precio = Integer.parseInt(tf_precioServicioM.getText());
-        String calificaciones = tf_calificacionM.getText();
 
-        Date fecha = fecha_CreacionM.getDate();
-        String empresa = tf_EmpresaM.getText();
-        int po = cb_servicio.getSelectedIndex();
-        servicios.get(po).setNombre(nombre);
-        servicios.get(po).setPrecio(precio);
-        servicios.get(po).setCalificacion(calificaciones);
-        servicios.get(po).setFecha(fecha);
-        servicios.get(po).setEmpresa(empresa);
+        try {
+            String nombre = tf_nombreServicioM.getText();
+            int precio = Integer.parseInt(tf_precioServicioM.getText());
+            String calificaciones = tf_calificacionM.getText();
 
-        Object[] servicio = {nombre};
-        Servicios x = new Servicios(nombre, precio, calificaciones, fecha, empresa);
-        DefaultTableModel modelo = (DefaultTableModel) tabla_Servicio.getModel();
-        modelo.insertRow(cb_servicio.getSelectedIndex(), servicio);
-        modelo.removeRow(cb_servicio.getSelectedIndex() + 1);
-        tabla_Servicio.setModel(modelo);
+            Date fecha = fecha_CreacionM.getDate();
+            String empresa = tf_EmpresaM.getText();
+            int po = cb_servicio.getSelectedIndex();
+            servicios.get(po).setNombre(nombre);
+            servicios.get(po).setPrecio(precio);
+            servicios.get(po).setCalificacion(calificaciones);
+            servicios.get(po).setFecha(fecha);
+            servicios.get(po).setEmpresa(empresa);
 
-        DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_servicio.getModel();
-        dc.setSelectedItem(x);
-        dc.insertElementAt(x, po);
-        dc.removeElementAt(po + 1);
-        cb_servicio.setModel(dc);
+            Object[] servicio = {nombre};
+            Servicios x = new Servicios(nombre, precio, calificaciones, fecha, empresa);
+            DefaultTableModel modelo = (DefaultTableModel) tabla_Servicio.getModel();
+            modelo.insertRow(cb_servicio.getSelectedIndex(), servicio);
+            modelo.removeRow(cb_servicio.getSelectedIndex() + 1);
+            tabla_Servicio.setModel(modelo);
+
+            DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_servicio.getModel();
+            dc.setSelectedItem(x);
+            dc.insertElementAt(x, po);
+            dc.removeElementAt(po + 1);
+            cb_servicio.setModel(dc);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "** OCURRIO UN ERROR **");
+        }
 
 
     }//GEN-LAST:event_modificar_UsuarioActionPerformed
@@ -1519,54 +1760,213 @@ public class LOGIN extends javax.swing.JFrame {
     }//GEN-LAST:event_cb_MiniItemStateChanged
 
     private void modificar_MiniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificar_MiniActionPerformed
-        // TODO add your handling code here:
+        try {
+            String nombre = tf_MiniNombreM.getText();
+            int tempo = Integer.parseInt(tf_MiniTemporadasM.getText());
+            String genero = tf_MiniGeneroM.getText();
+            int dura = Integer.parseInt(tf_DuracionMiniM.getText());
+            String descripcion = tf_descripMiniM.getText();
+            int po = cb_Mini.getSelectedIndex();
+
+            mini.get(po).setNombre(nombre);
+            mini.get(po).setTemporadas(tempo);
+            mini.get(po).setGenero(genero);
+            mini.get(po).setDuracion(dura);
+            mini.get(po).setDescripcion(descripcion);
+
+            Object[] minise = {nombre};
+            Miniseries x = new Miniseries(nombre, tempo, genero, dura, descripcion);
+            DefaultTableModel modelo = (DefaultTableModel) tabla_eliminarMini.getModel();
+            modelo.insertRow(cb_Mini.getSelectedIndex(), minise);
+            modelo.removeRow(cb_Mini.getSelectedIndex() + 1);
+            tabla_eliminarMini.setModel(modelo);
+
+            DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_Mini.getModel();
+            dc.setSelectedItem(x);
+            dc.insertElementAt(x, po);
+            dc.removeElementAt(po + 1);
+            cb_Mini.setModel(dc);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "** OCURRIO UN ERROR **");
+        }
+
+
     }//GEN-LAST:event_modificar_MiniActionPerformed
 
     private void eliminar_MiniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminar_MiniActionPerformed
-        // TODO add your handling code here:
+
+        try {
+            if (tabla_eliminarMini.getSelectedRow() >= 0) {
+                int po = tabla_eliminarMini.getSelectedRow();
+                Miniseries x = mini.get(tabla_eliminarMini.getSelectedRow());
+                mini.remove(tabla_eliminarMini.getSelectedRow());
+                DefaultTableModel modelo = (DefaultTableModel) tabla_eliminarMini.getModel();
+                modelo.removeRow(tabla_eliminarMini.getSelectedRow());
+                tabla_eliminarMini.setModel(modelo);
+                DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_Mini.getModel();
+                dc.removeElementAt(po);
+                cb_Mini.setModel(dc);
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "** OCURRIO UN ERROR **");
+        }
+
+
     }//GEN-LAST:event_eliminar_MiniActionPerformed
 
     private void agregar_MiniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_MiniActionPerformed
-        String nombre = tf_MiniNombre.getText();
-        int tempo = Integer.parseInt(tf_MiniTemporadas.getText());
-        String genero = tf_MiniGenero.getText();
-        int dura = Integer.parseInt(tf_DuracionMini.getText());
-        String descripcion = tf_descripMini.getText();
+        try {
+            String nombre = tf_MiniNombre.getText();
+            int tempo = Integer.parseInt(tf_MiniTemporadas.getText());
+            String genero = tf_MiniGenero.getText();
+            int dura = Integer.parseInt(tf_DuracionMini.getText());
+            String descripcion = tf_descripMini.getText();
 
-        tf_MiniNombre.setText("");
-        tf_MiniTemporadas.setText("");
-        tf_MiniGenero.setText("");
-        tf_DuracionMini.setText("");
-        tf_descripMini.setText("");
+            tf_MiniNombre.setText("");
+            tf_MiniTemporadas.setText("");
+            tf_MiniGenero.setText("");
+            tf_DuracionMini.setText("");
+            tf_descripMini.setText("");
 
-        mini.add(new Miniseries(nombre, tempo, genero, dura, descripcion));
-        Object[] Mini = {nombre};
-        DefaultTableModel modelo = (DefaultTableModel) tabla_eliminarMini.getModel();
-        modelo.addRow(Mini);
-        tabla_eliminarMini.setModel(modelo);
-        ////////
-        Miniseries x = new Miniseries(nombre, tempo, genero, dura, descripcion);
-        DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_Mini.getModel();
-        dc.addElement(x);
-        cb_Mini.setModel(dc);
+            mini.add(new Miniseries(nombre, tempo, genero, dura, descripcion));
+            Object[] Mini = {nombre};
+            DefaultTableModel modelo = (DefaultTableModel) tabla_eliminarMini.getModel();
+            modelo.addRow(Mini);
+            tabla_eliminarMini.setModel(modelo);
+
+            DefaultTableModel mod = (DefaultTableModel) tabla_Opciones.getModel();
+            mod.addRow(Mini);
+            tabla_Opciones.setModel(mod);
+            ////////
+            Miniseries x = new Miniseries(nombre, tempo, genero, dura, descripcion);
+            DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_Mini.getModel();
+            dc.addElement(x);
+            cb_Mini.setModel(dc);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "** OCURRIO UN ERROR **");
+        }
+
 
     }//GEN-LAST:event_agregar_MiniActionPerformed
 
     private void agregar_PeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_PeliculaActionPerformed
-        // TODO add your handling code here:
+
+        try {
+            String nombre = tf_PeliculaNombre.getText();
+            int temporadas = Integer.parseInt(tf_PelisTemporadas.getText());
+            int duracion = Integer.parseInt(tf_DuracionPelicula.getText());
+            Date estrenoCine = EstrenoCine.getDate();
+            Date estrenoStr = EstrenoEnStream.getDate();
+            String plot = tf_plot.getText();
+
+            tf_PeliculaNombre.setText("");
+            tf_PelisTemporadas.setText("");
+            tf_DuracionPelicula.setText("");
+            tf_plot.setText("");
+
+            pelis.add(new Peliculas(nombre, temporadas, duracion, estrenoCine, estrenoStr, plot));
+            Object[] peli = {nombre};
+            DefaultTableModel modelo = (DefaultTableModel) tabla_eliminarPelicula.getModel();
+            modelo.addRow(peli);
+            tabla_eliminarPelicula.setModel(modelo);
+
+            DefaultTableModel mod = (DefaultTableModel) tabla_Opciones.getModel();
+            mod.addRow(peli);
+            tabla_Opciones.setModel(mod);
+            ////////
+            Miniseries x = new Miniseries(nombre, temporadas, nombre, duracion, plot);
+            DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_pelicula.getModel();
+            dc.addElement(x);
+            cb_pelicula.setModel(dc);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "** OCURRIO UN ERROR **");
+        }
+
+
     }//GEN-LAST:event_agregar_PeliculaActionPerformed
 
     private void eliminar_PeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminar_PeliculaActionPerformed
-        // TODO add your handling code here:
+        try {
+            if (tabla_eliminarPelicula.getSelectedRow() >= 0) {
+                int po = tabla_eliminarPelicula.getSelectedRow();
+                Peliculas x = pelis.get(tabla_eliminarPelicula.getSelectedRow());
+                pelis.remove(tabla_eliminarPelicula.getSelectedRow());
+                DefaultTableModel modelo = (DefaultTableModel) tabla_eliminarPelicula.getModel();
+                modelo.removeRow(tabla_eliminarPelicula.getSelectedRow());
+                tabla_eliminarPelicula.setModel(modelo);
+                DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_pelicula.getModel();
+                dc.removeElementAt(po);
+                cb_pelicula.setModel(dc);
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "** OCURRIO UN ERROR **");
+        }
+
+
     }//GEN-LAST:event_eliminar_PeliculaActionPerformed
 
     private void modificar_PeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificar_PeliculaActionPerformed
-        // TODO add your handling code here:
+
+        try {
+            String nombre = tf_PeliculaNombre1.getText();
+            int temporadas = Integer.parseInt(tf_PelisTemporadas1.getText());
+            int duracion = Integer.parseInt(tf_DuracionPelicula1.getText());
+            Date estrenoCine = EstrenoCine1.getDate();
+            Date estrenoStr = EstrenoEnStream1.getDate();
+            String plot = tf_plot1.getText();
+            int po = cb_pelicula.getSelectedIndex();
+
+            pelis.get(po).setNombre(nombre);
+            pelis.get(po).setTemporadas(temporadas);
+            pelis.get(po).setDuracion(duracion);
+            pelis.get(po).setEstrenoCine(estrenoCine);
+            pelis.get(po).setEstrenoStream(estrenoStr);
+            pelis.get(po).setPlot(plot);
+
+            Object[] peli = {nombre};
+            Peliculas x = new Peliculas(nombre, temporadas, duracion, estrenoCine, estrenoStr, plot);
+            DefaultTableModel modelo = (DefaultTableModel) tabla_eliminarPelicula.getModel();
+            modelo.insertRow(cb_pelicula.getSelectedIndex(), peli);
+            modelo.removeRow(cb_pelicula.getSelectedIndex() + 1);
+            tabla_eliminarPelicula.setModel(modelo);
+
+            DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_pelicula.getModel();
+            dc.setSelectedItem(x);
+            dc.insertElementAt(x, po);
+            dc.removeElementAt(po + 1);
+            cb_pelicula.setModel(dc);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "** OCURRIO UN ERROR **");
+        }
+
+
     }//GEN-LAST:event_modificar_PeliculaActionPerformed
 
     private void cb_peliculaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_peliculaItemStateChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_cb_peliculaItemStateChanged
+
+    private void subscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subscribirActionPerformed
+
+        try {
+            if (tabla_serviciosSub.getSelectedRow() >= 0) {
+                int po = tabla_serviciosSub.getSelectedRow();
+                Servicios x = servicios.get(tabla_serviciosSub.getSelectedRow());
+                subscripciones.append("\nSe subcribio a : " + x);
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "** OCURRIO UN ERROR **");
+        }
+
+
+    }//GEN-LAST:event_subscribirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1642,6 +2042,9 @@ public class LOGIN extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -1693,23 +2096,34 @@ public class LOGIN extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane10;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTabbedPane jTabbedPane5;
     private javax.swing.JTabbedPane jTabbedPane6;
+    private javax.swing.JTabbedPane jTabbedPane7;
+    private javax.swing.JTabbedPane jTabbedPane8;
     private javax.swing.JDialog jd_CrearUsario;
+    private javax.swing.JDialog jd_OpcionesUsuario;
     private javax.swing.JDialog jd_admin;
     private javax.swing.JButton login_button;
     private javax.swing.JButton modificar_Mini;
@@ -1717,10 +2131,14 @@ public class LOGIN extends javax.swing.JFrame {
     private javax.swing.JButton modificar_Serie;
     private javax.swing.JButton modificar_Usuario;
     private javax.swing.JTextField pass_login;
+    private javax.swing.JButton subscribir;
+    private javax.swing.JTextArea subscripciones;
+    private javax.swing.JTable tabla_Opciones;
     private javax.swing.JTable tabla_Servicio;
     private javax.swing.JTable tabla_eliminarMini;
     private javax.swing.JTable tabla_eliminarPelicula;
     private javax.swing.JTable tabla_eliminarSerie;
+    private javax.swing.JTable tabla_serviciosSub;
     private javax.swing.JTextField tf_Actores;
     private javax.swing.JTextField tf_ActoresM;
     private javax.swing.JTextField tf_ApellidoUsuario;
@@ -1769,5 +2187,6 @@ public class LOGIN extends javax.swing.JFrame {
     ArrayList<Servicios> servicios = new ArrayList();
     ArrayList<Series> serie = new ArrayList();
     ArrayList<Miniseries> mini = new ArrayList();
+    ArrayList<Peliculas> pelis = new ArrayList();
 
 }

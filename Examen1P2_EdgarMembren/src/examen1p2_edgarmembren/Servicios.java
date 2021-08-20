@@ -71,7 +71,7 @@ public class Servicios {
 
     @Override
     public String toString() {
-        return "Servicios{" + "nombre=" + nombre ;
+        return  nombre ;
     }
     
     
