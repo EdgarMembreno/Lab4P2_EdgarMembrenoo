@@ -1363,10 +1363,48 @@ public class LOGIN extends javax.swing.JFrame {
     }//GEN-LAST:event_crear_CuentaBotonActionPerformed
 
     private void eliminar_SeriesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminar_SeriesActionPerformed
-        // TODO add your handling code here:
+        if (tabla_eliminarSerie.getSelectedRow() >= 0) {
+            int po = tabla_eliminarSerie.getSelectedRow();
+            Series x = serie.get(tabla_eliminarSerie.getSelectedRow());
+            serie.remove(tabla_eliminarSerie.getSelectedRow());
+            DefaultTableModel modelo = (DefaultTableModel) tabla_eliminarSerie.getModel();
+            modelo.removeRow(tabla_eliminarSerie.getSelectedRow());
+            tabla_eliminarSerie.setModel(modelo);
+            DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_series.getModel();
+            dc.removeElementAt(po);
+            cb_series.setModel(dc);
+        }
+
+
     }//GEN-LAST:event_eliminar_SeriesActionPerformed
 
     private void modificar_SerieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificar_SerieActionPerformed
+        String nombre = tf_SerieNombreM.getText();
+        int temporada = Integer.parseInt(tf_SeriesTemporadasM.getText());
+        int calificaciones = Integer.parseInt(tf_RatingSeriesM.getText());
+        Date estreno = EstrenoSerieM.getDate();
+        int actores = Integer.parseInt(tf_ActoresM.getText());
+        int po = cb_series.getSelectedIndex();
+
+        serie.get(po).setNombre(nombre);
+        serie.get(po).setTemporadas(temporada);
+        serie.get(po).setCalificacion(calificaciones);
+        serie.get(po).setEstreno(estreno);
+        serie.get(po).setActores(actores);
+
+        Object[] serie = {nombre};
+        Series x = new Series(nombre, temporada, calificaciones, estreno, actores);
+        DefaultTableModel modelo = (DefaultTableModel) tabla_eliminarSerie.getModel();
+        modelo.insertRow(cb_series.getSelectedIndex(), serie);
+        modelo.removeRow(cb_series.getSelectedIndex() + 1);
+        tabla_eliminarSerie.setModel(modelo);
+
+        DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_series.getModel();
+        dc.setSelectedItem(x);
+        dc.insertElementAt(x, po);
+        dc.removeElementAt(po + 1);
+        cb_series.setModel(dc);
+
 
     }//GEN-LAST:event_modificar_SerieActionPerformed
 
@@ -1375,7 +1413,29 @@ public class LOGIN extends javax.swing.JFrame {
     }//GEN-LAST:event_cb_seriesItemStateChanged
 
     private void agregar_SeriesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_SeriesActionPerformed
-        // TODO add your handling code here:
+        String nombre = tf_SerieNombre.getText();
+        int temporada = Integer.parseInt(tf_SeriesTemporadas.getText());
+        int calificaciones = Integer.parseInt(tf_RatingSeries.getText());
+        Date estreno = EstrenoSerie.getDate();
+        int actores = Integer.parseInt(tf_Actores.getText());
+
+        tf_SerieNombre.setText("");
+        tf_SeriesTemporadas.setText("");
+        tf_RatingSeries.setText("");
+        tf_Actores.setText("");
+
+        serie.add(new Series(nombre, temporada, calificaciones, estreno, actores));
+
+        Object[] serie = {nombre};
+        DefaultTableModel modelo = (DefaultTableModel) tabla_eliminarSerie.getModel();
+        modelo.addRow(serie);
+        tabla_eliminarSerie.setModel(modelo);
+        ///////////
+        Series x = new Series(nombre, temporada, calificaciones, estreno, actores);
+        DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_servicio.getModel();
+        dc.addElement(x);
+        cb_series.setModel(dc);
+
     }//GEN-LAST:event_agregar_SeriesActionPerformed
 
     private void agregar_ServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_ServicioActionPerformed
@@ -1467,7 +1527,29 @@ public class LOGIN extends javax.swing.JFrame {
     }//GEN-LAST:event_eliminar_MiniActionPerformed
 
     private void agregar_MiniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_MiniActionPerformed
-        // TODO add your handling code here:
+        String nombre = tf_MiniNombre.getText();
+        int tempo = Integer.parseInt(tf_MiniTemporadas.getText());
+        String genero = tf_MiniGenero.getText();
+        int dura = Integer.parseInt(tf_DuracionMini.getText());
+        String descripcion = tf_descripMini.getText();
+
+        tf_MiniNombre.setText("");
+        tf_MiniTemporadas.setText("");
+        tf_MiniGenero.setText("");
+        tf_DuracionMini.setText("");
+        tf_descripMini.setText("");
+
+        mini.add(new Miniseries(nombre, tempo, genero, dura, descripcion));
+        Object[] Mini = {nombre};
+        DefaultTableModel modelo = (DefaultTableModel) tabla_eliminarMini.getModel();
+        modelo.addRow(Mini);
+        tabla_eliminarMini.setModel(modelo);
+        ////////
+        Miniseries x = new Miniseries(nombre, tempo, genero, dura, descripcion);
+        DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_Mini.getModel();
+        dc.addElement(x);
+        cb_Mini.setModel(dc);
+
     }//GEN-LAST:event_agregar_MiniActionPerformed
 
     private void agregar_PeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_PeliculaActionPerformed
@@ -1683,7 +1765,9 @@ public class LOGIN extends javax.swing.JFrame {
     private javax.swing.JTextField tf_precioServicioM;
     private javax.swing.JTextField user_login;
     // End of variables declaration//GEN-END:variables
- ArrayList<Usuarios> usuario = new ArrayList();
+  ArrayList<Usuarios> usuario = new ArrayList();
     ArrayList<Servicios> servicios = new ArrayList();
+    ArrayList<Series> serie = new ArrayList();
+    ArrayList<Miniseries> mini = new ArrayList();
 
 }
